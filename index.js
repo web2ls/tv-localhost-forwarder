@@ -5,7 +5,7 @@ const LOCAL_PORT = 80;
 const REDIRECT_PORT = 6285;
 
 app.get('*', (request, response) => {
-  const url = `${request.protocol}://${request.hostname}:${REDIRECT_PORT}${request.originalUrl}`;
+  const url = `http://${request.hostname}:${REDIRECT_PORT}${request.originalUrl}`;
   response.redirect(301, url);
 })
 
